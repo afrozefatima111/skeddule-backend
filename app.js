@@ -17,14 +17,7 @@ app.use(cors({
 app.use(morgan("dev"));
 app.use(helmet());
 // Serve static files from the build folder
-app.use(express.static(path.join(__dirname, 'client', 'build')));
-
-// Other middleware and routes...
-
-// Send the index.html file for any other requests
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-});
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.urlencoded({extended : true  }));
 app.use(express.json());
