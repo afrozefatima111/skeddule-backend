@@ -16,7 +16,7 @@ app.use(helmet());
 // Serve static files from the build folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.urlencoded({extended : true  }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -26,8 +26,8 @@ app.get("/", (req, res) => {
 app.use(`${API_BASE_NAME}/user`, require("./routes/user"));
 app.use(`${API_BASE_NAME}/task`, require("./routes/task"));
 
-connectDB();  
+connectDB();
 
-  app.listen(port, () => {
-    console.log(`Server is on http://localhost:${port}`);
-  });
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Server is on http://localhost:${port}`);
+});
