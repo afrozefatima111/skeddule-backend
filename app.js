@@ -10,10 +10,7 @@ const connectDB = require("./config/database");
 
 const API_BASE_NAME = "/api";
 const port = process.env.PORT | 5000;
-app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
-  credentials: true,
-}));
+app.use(cors());
 app.use(morgan("dev"));
 app.use(helmet());
 // Serve static files from the build folder
