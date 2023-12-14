@@ -32,5 +32,5 @@ app.use(`${API_BASE_NAME}/task`, require("./routes/task"));
 connectDB();  
 
   app.listen(port, () => {
-    console.log(`Server is running in ${process.env.NODE_ENV} mode on http://localhost:${port}`);
+    console.log(`Server is on http://localhost:${port}`);
   });
